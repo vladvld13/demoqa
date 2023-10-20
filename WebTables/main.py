@@ -6,7 +6,9 @@ import input
 
 page: Page
 
-rows = "10"
+rows = "10" # aici mai caut
+# daca selectez page.get_by_label("rows per page").inner_text() imi apare 5,10,20,50...
+
 
 def get_page(playwright):
 
