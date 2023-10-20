@@ -2,30 +2,9 @@ from playwright.sync_api import sync_playwright, expect, Page
 import RegistrationField
 from RegistrationField import RegistrationField as registrationField
 from Error import InputNotSavedError, InvalidCommand, RowNotDeleted
+import input
 
 page: Page
-
-input1 = [
-            {'First Name':'Cierra',
-              'Last Name' : 'Ion',
-              'Age' : '40',
-              'Email' : 'popescu.ion@gmail.com',
-              'Salary' : '5000',
-              'Department' : 'Marketing'},
-
-            "Submit"
-]
-
-input2 = [
-            {'First Name':'Andrei',
-              'Last Name' : 'Paul',
-              'Age' : '20',
-              'Email' : 'paul.andrei@gmail.com',
-              'Salary' : '5000',
-              'Department' : 'Management'},
-
-            "Close"
-]
 
 rows = "10"
 
@@ -131,10 +110,10 @@ def run(playwright):
     browser = get_page(playwright)
     RegistrationField.page = page
 
-    add_element_to_table_and_check(input1)
+    add_element_to_table_and_check(input.input1)
 
 
-    #delete_element_from_table_and_check("Cierra Vega")
+    delete_element_from_table_and_check("Cierra Vega")
 
 
 
